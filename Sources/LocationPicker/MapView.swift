@@ -28,6 +28,8 @@ struct MapView: UIViewRepresentable {
 
         view.removeAnnotations(view.annotations)
         view.addAnnotation(annotation)
+        
+        view.centerCoordinate = self.centerCoordinate
     }
 
     func makeCoordinator() -> Coordinator {
