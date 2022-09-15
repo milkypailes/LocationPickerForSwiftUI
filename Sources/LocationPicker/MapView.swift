@@ -23,7 +23,11 @@ struct MapView: UIViewRepresentable {
     }
 
     func updateUIView(_ view: MKMapView, context: Context) {
-        //print(#function)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: self.centerCoordinate.latitude, longitude: self.centerCoordinate.longitude)
+
+        view.removeAnnotations(view.annotations)
+        view.addAnnotation(annotation)
     }
 
     func makeCoordinator() -> Coordinator {
